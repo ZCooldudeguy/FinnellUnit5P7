@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bad
   - Target
+  - Sensor
+  - GoodX
   layers:
   - Default
   - TransparentFX
