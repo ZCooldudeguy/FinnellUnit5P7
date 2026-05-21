@@ -24,48 +24,10 @@ public class GameManagerX : MonoBehaviour
     private float minValueX = -3.75f; //  x value of the center of the left-most square
     private float minValueY = -3.75f; //  y value of the center of the bottom-most square
 
-    public float timeRemaining = 60;
-    public bool timerIsRunning;
-    public TMP_Text timetext;
 
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
 
-    public void Start()
-    {
-        timerIsRunning = true;
-    }
 
-    public void Update()
-    {
-        if (isGameActive == true)
-        {
-            if (timerIsRunning)
-            {
-                if (timeRemaining > 0)
-                {
-                    timeRemaining -= Time.deltaTime;
-                    DisplayTime(timeRemaining);
-
-                }
-            }
-            else
-            {
-                Debug.Log("Game Over");
-                timeRemaining = 0;
-                timerIsRunning = false;
-                GameOver();
-
-
-            }  }
-    }   
-
-    void DisplayTime(float timeToDisplay)
-    {
-        timeToDisplay += 1;
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timetext.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
 
     public void StartGame(int difficultyX)
     {
